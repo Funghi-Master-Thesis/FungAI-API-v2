@@ -1,3 +1,10 @@
+# Disclaimer
+
+This is a fork of a existing project located here: https://github.com/BDD-G/FungAiweb/tree/main
+All credit goes to Rasmus Johansen Rieneck for the project.
+
+This fork is an update of the backend API with improved models and the addition of alternative image inference, and modifications to specific files. Jakob and I have NOT created this entire projekt, only modified select areas to fit with our new API and model. 
+
 # Fungi-classifcation
 
 This project aims to accelarate Fungal indetification performed in BioEngineering department at DTU using Deep Learning.
