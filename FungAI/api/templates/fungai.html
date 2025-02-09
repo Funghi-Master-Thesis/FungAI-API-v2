@@ -1,0 +1,81 @@
+<div id="fungai" class="tab-pane fade" role="tabpanel" aria-labelledby="fungai-tab">
+    <div class="container mt-4">
+        <ul class="nav nav-tabs" id="fungaiTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="fungai1-tab" data-bs-toggle="tab" data-bs-target="#fungai1" type="button" role="tab" aria-controls="fungai1" aria-selected="true">Six-plate Images</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="fungai2-tab" data-bs-toggle="tab" data-bs-target="#fungai2" type="button" role="tab" aria-controls="fungai2" aria-selected="false">Single-plate Images</button>
+            </li>
+        </ul>
+        <div class="tab-content mt-3" id="fungaiTabContent">
+            <div class="tab-pane fade show active" id="fungai1" role="tabpanel" aria-labelledby="fungai1-tab">
+                <h2>Six-plate FungAI</h2>
+                <hr> <!-- Horizontal line -->
+                <p>Upload an image to classify:</p>
+                <form id="upload-form" enctype="multipart/form-data">
+                    <!-- Custom file input -->
+                    <div class="custom-file-upload">
+                        <button type="button" id="custom-file-button" class="btn">
+                            Choose file
+                        </button>
+                        <input type="file" name="file" id="file-input" class="file-input" accept="image/*" required>
+                        <div id="file-preview">
+                            <span id="file-name">No file chosen</span>
+                            <button type="button" id="clear-file-button" class="clear-file-button" style="display: none;">&times;</button>
+                        </div>
+                        <div>
+                            <span>Image is masked:</span>
+                            <input type='checkbox' name='ismasked' required>
+                        </div>
+
+                    </div>
+                    <button type="submit" id="upload-button" class="btn btn-primary mt-2">Submit</button>
+                </form>
+            
+                <!-- Prediction Results -->
+                <div id="loading-spinner" class="text-center" style="display: none; margin-top: 20px;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <p>Processing your image, please wait...</p>
+                </div>
+                <div id="prediction-results" style="margin-top: 20px;"></div>
+            </div>
+            <div class="tab-pane fade" id="fungai2" role="tabpanel" aria-labelledby="fungai2-tab">
+                <h2>Single-plate FungAI</h2>
+                <hr> <!-- Horizontal line -->
+                <p>Upload an image to classify:</p>
+                <form id="upload-form-single" enctype="multipart/form-data">
+                    <!-- Custom file input -->
+                    <div class="custom-file-upload">
+                        <button type="button" id="custom-file-button-single" class="btn">
+                            Choose file
+                        </button>
+                        <input type="file" name="file" id="file-input-single" class="file-input" accept="image/*" required>
+                        <div id="file-preview-single">
+                            <span id="file-name-single">No file chosen</span>
+                            <button type="button" id="clear-file-button-single" class="clear-file-button" style="display: none;">&times;</button>
+                        </div>
+                        <div>
+                            <span>Image is masked:</span>
+                            <input type='checkbox' name='ismasked' required>
+                        </div>
+                    </div>
+                    <button type="submit" id="upload-button-single" class="btn btn-primary mt-2">Submit</button>
+                </form>
+            
+                <!-- Prediction Results -->
+                <div id="loading-spinner-single" class="text-center" style="display: none; margin-top: 20px;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <p>Processing your image, please wait...</p>
+                </div>
+                <div id="prediction-results-single" style="margin-top: 20px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</div>

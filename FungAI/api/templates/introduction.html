@@ -1,0 +1,43 @@
+<div class="tab-pane fade show active" id="introduction" role="tabpanel" aria-labelledby="introduction-tab">
+    <div class="info-container">
+        <p>
+        The <b>FungAI-V1.1</b> server provides an automated prediction system for fungal species identification. <br>
+        This AI-based model leverages deep learning techniques applied to time-lapse images. <br><br>
+        The server identifies the top five closest classifications to the related fungal species. <br><br>
+        The current version was trained on 26,451 high-resolution images representing 110 species from 35 genera, derived from fungal strains in the IBT Culture Collection.
+        </p>
+        <hr>
+        <!-- Info Item 1 -->
+        <div class="info-item">
+            <img src="{{ request.url_for('static', path='images/genus_donut_chart.png') }}?v={{ version }}" alt="Fungi Image1"
+                 class="img-thumbnail clickable-image">
+            <div class="info-text">
+                <h4>Overview of genus</h4>
+                <p>This section gives an overview of the genus in focus. It includes details about classification and characteristics.</p>
+            </div>
+        </div>
+        <!-- Info Item 2 -->
+        <div class="info-item">
+            <img src="{{ request.url_for('static', path='images/species_donut_chart.png') }}?v={{ version }}" alt="Fungi Image2"
+                 class="img-thumbnail clickable-image">
+            <div class="info-text">
+                <h4>Overview of species</h4>
+                <p>This section provides an overview of different species within the genus, highlighting their unique features and relevance.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Image Preview -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: 10px; right: 15px; font-size: 1.5rem;">
+                    &times;
+                </button>
+                <img src="" alt="Enlarged Image" id="modalImage">
+            </div>
+        </div>
+    </div>
+</div>

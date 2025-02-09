@@ -1,0 +1,37 @@
+<div class="tab-pane fade" id="sample-data" role="tabpanel" aria-labelledby="sample-data-tab">
+    <h2>Sample Data</h2>
+    <hr>
+    <div class="sample-data-container">
+        <div class="sample-row">
+            <img src="{{ request.url_for('static', path='images/IBT_23255.jpeg') }}?v={{ version }}" alt="IBT 23255" class="sample-img">
+            <p class="sample-name">IBT 26955</p>
+            <button class="custom-button" onclick="fetchSampleData('IBT_23255')">View Samples</button>
+        </div>
+        <div class="sample-row">
+            <img src="{{ request.url_for('static', path='images/IBT_32802.jpeg') }}?v={{ version }}"  alt="IBT 32802" class="sample-img">
+            <p class="sample-name">IBT 41508</p>
+            <button class="custom-button" onclick="fetchSampleData('IBT_32802')">View Samples</button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="sampleDataModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sample Data - <span id="ibt-number">IBT</span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="sample-grid" class="row"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="select-all" class="custom-button">Select All</button>
+                    <button type="button" id="download-selected" class="custom-button">Download Selected</button>
+                    <button type="button" class="custom-button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

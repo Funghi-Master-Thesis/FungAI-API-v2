@@ -1,0 +1,552 @@
+body {
+    font-family: 'Neo Sans', Arial, sans-serif; /* Neo Sans is the primary font; Arial is fallback */
+    margin: 10px; /* Reduced margin for the entire page */
+    color: #000; /* Default text color: black */
+}
+.container {
+    padding-left: 15px; /* Reduce container padding */
+    padding-right: 15px;
+}
+.header-text {
+    color: #030F4F; /* RGB: 3, 15, 79 */
+}
+a, a:hover, a:focus, a:active {
+    color: #030F4F; /* Make all links the same color as the header */
+    text-decoration: none; /* Optional: Removes underline from links */
+}
+a:hover {
+    text-decoration: underline; /* Add underline on hover for better UX */
+}
+button, .btn {
+    background-color: #030F4F; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove border for a clean look */
+}
+button:hover, .btn:hover {
+    background-color: #021037; /* Slightly darker shade for hover effect */
+}
+.tab-content {
+    margin-top: 20px;
+}
+.info-container {
+    margin: 15px 0; /* Reduced vertical margin */
+}
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px; /* Reduced spacing between items */
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.info-item img {
+    max-width: 200px;
+    height: auto;
+    margin-right: 15px; /* Reduced image spacing */
+    border: none; /* Ensure no borders are applied */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+.info-item img:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+.info-text {
+    flex: 1;
+}
+.info-text h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.dropdown-toggle::after {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+.dropdown-text {
+    font-size: 2rem;
+    font-weight: normal;
+    color: #030F4F; /* Dropdown text color */
+    cursor: pointer;
+    text-decoration: none;
+}
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0; /* Ensure the banner starts from the very left of the browser */
+    width: 100%; /* Full width */
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    z-index: 1000;
+}
+#cookie-banner h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+#cookie-banner p {
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+#cookie-banner p a {
+    color: #4caf50;
+    text-decoration: underline;
+}
+#cookie-banner .d-flex label {
+    margin-right: 15px;
+    font-size: 0.9rem;
+}
+#cookie-banner .d-flex label input {
+    margin-right: 5px;
+}
+#cookie-banner button {
+    border: none;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#accept-necessary {
+    background-color: #555;
+    color: #fff;
+    margin-right: 10px;
+}
+#accept-all {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+/* Navigation bar styles */
+.nav-tabs {
+    background-color: #f1f1f1; /* Light gray background for the navigation bar */
+    border: 1px solid #ccc; /* Border around the entire navigation bar */
+    border-radius: 5px; /* Optional: Slightly rounded corners */
+}
+
+li > button {
+    background-color: #f1f1f1
+}
+.nav-tabs .nav-item {
+    border-right: 1px solid #ccc; /* Border between each tab */
+}
+
+.nav-tabs .nav-item:last-child {
+    border-right: 1px solid #ccc; /* Ensure the last tab also has a right border */
+}
+
+.nav-tabs .nav-link {
+    color: #000; /* Black text */
+    font-weight: normal; /* Remove bold */
+    padding: 10px 15px; /* Spacing for better layout */
+    border: none; /* Remove borders */
+    border-radius: 0; /* Ensure no rounded corners */
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: #e9ecef; /* Slightly darker gray for hover */
+    color: #000; /* Black text on hover */
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #ccc; /* Darker gray for active tab */
+    color: #000; /* Black text for active tab */
+    font-weight: normal; /* Remove bold */
+    border: none; /* Remove any borders */
+    border-radius: 0; /* Remove rounded corners */
+}
+
+/* Styling for modal image */
+.modal-dialog {
+    max-width: 75vw; /* Set a wider modal width */
+    max-height: 75vh; /* Set a taller modal height */
+    margin: auto;
+}
+
+.modal-content {
+    background-color: transparent;
+    border: none; /* Remove any borders for a clean look */
+}
+
+.modal-body img {
+    max-width: 95%;
+    max-height: 95%;
+    margin: auto;
+    display: block;
+    border: none; /* Remove border around modal image */
+}
+
+/* Custom file upload container */
+.custom-file-upload {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Vertically align items */
+    gap: 10px; /* Space between button, file name, and image preview */
+}
+
+/* Browse button styles */
+#custom-file-button {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    transition: background-color 200ms; /* Smooth hover transition */
+    height: 40px; /* Consistent height */
+}
+
+#custom-file-button-single {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    transition: background-color 200ms; /* Smooth hover transition */
+    height: 40px; /* Consistent height */
+}
+
+/* Hover state for the Browse button */
+#custom-file-button:hover {
+    background-color: #f3f4f6; /* Light gray on hover */
+}
+#custom-file-button-single:hover {
+    background-color: #f3f4f6; /* Light gray on hover */
+}
+/* File input hidden */
+.file-input {
+    display: none; /* Hide the default file input */
+}
+
+/* File preview container */
+#file-preview {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 10px; /* Space between elements */
+    position: relative; /* For positioning the '×' button */
+}
+#file-preview-single {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 10px; /* Space between elements */
+    position: relative; /* For positioning the '×' button */
+}
+
+/* File name */
+#file-name {
+    align-self: flex-end; /* Align to the bottom of the container */
+    color: #000; /* Black text for the file name */
+    font-size: 14px;
+    white-space: nowrap; /* Prevent text wrapping */
+    margin: 0; /* Remove default margin */
+}
+#file-name-single {
+    align-self: flex-end; /* Align to the bottom of the container */
+    color: #000; /* Black text for the file name */
+    font-size: 14px;
+    white-space: nowrap; /* Prevent text wrapping */
+    margin: 0; /* Remove default margin */
+}
+
+/* Image preview styles */
+#file-preview img {
+    height: 40px; /* Match the height of the buttons */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image is cropped to fit */
+    border: 1px solid #ccc; /* Keep the border for consistency */
+    border-radius: 5px; /* Match the button's border radius */
+}
+#file-preview-single img {
+    height: 40px; /* Match the height of the buttons */
+    width: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image is cropped to fit */
+    border: 1px solid #ccc; /* Keep the border for consistency */
+    border-radius: 5px; /* Match the button's border radius */
+}
+/* Style the Upload button */
+#upload-button {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    height: 40px; /* Match the height of the Browse button */
+    padding: 0 15px; /* Adjust padding for a consistent look */
+    border-radius: 5px; /* Match the border radius of the Browse button */
+    border: 1px solid #ccc; /* Consistent border styling */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    transition: background-color 200ms; /* Smooth hover effect */
+    display: flex; /* Align the button's content properly */
+    align-items: center; /* Vertically align text */
+    justify-content: center; /* Center-align text */
+}
+#upload-button-single {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    height: 40px; /* Match the height of the Browse button */
+    padding: 0 15px; /* Adjust padding for a consistent look */
+    border-radius: 5px; /* Match the border radius of the Browse button */
+    border: 1px solid #ccc; /* Consistent border styling */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    transition: background-color 200ms; /* Smooth hover effect */
+    display: flex; /* Align the button's content properly */
+    align-items: center; /* Vertically align text */
+    justify-content: center; /* Center-align text */
+}
+
+/* Hover state for the Upload button */
+#upload-button:hover {
+    background-color: #f3f4f6; /* Light gray background on hover */
+}
+#upload-button-single:hover {
+    background-color: #f3f4f6; /* Light gray background on hover */
+}
+
+/* Active state for the Upload button */
+#upload-button:active {
+    background-color: #e5e7eb; /* Slightly darker gray when active */
+}
+#upload-button-single:active {
+    background-color: #e5e7eb; /* Slightly darker gray when active */
+}
+
+/* Table with no borders */
+.prediction-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove spacing between cells */
+    margin-top: 20px;
+}
+
+.prediction-table th,
+.prediction-table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.prediction-table th {
+    background-color: #f3f4f6; /* Light gray header */
+    font-weight: bold;
+}
+
+.prediction-table td:first-child {
+    text-align: center; /* Center align the numbering column */
+}
+
+hr {
+    border: none;
+    border-top: 1px solid black; /* Black color for the line */
+    margin: 20px 0; /* Adjust spacing as needed */
+}
+
+
+/* Team list container */
+.team-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between rows */
+    margin-top: 20px;
+}
+
+/* Team row styling */
+.team-row {
+    display: grid;
+    grid-template-columns: 100px 300px auto; /* Fixed column sizes */
+    align-items: start; /* Align items to the top */
+    gap: 40px; /* Space between columns */
+    padding: 10px 0; /* Add some padding for better spacing */
+    border-bottom: 1px solid #ddd; /* Optional subtle divider between rows */
+}
+
+/* Remove bottom border for the last team member */
+.team-row:last-child {
+    border-bottom: none;
+}
+
+/* Team member image styling */
+.team-member-img {
+    width: 100px; /* Adjust size */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular image */
+    border: 2px solid #ccc; /* Optional border for the image */
+}
+
+/* Team member info container */
+.team-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between name and email */
+}
+
+.name-email {
+    display: flex;
+    flex-direction: column; /* Stack name and email vertically */
+    gap: 3px; /* Slightly reduced gap between name and email */
+}
+
+.name-email strong {
+    font-size: 1.1rem; /* Slightly larger for the name */
+}
+
+.name-email a {
+    color: #030F4F; /* Email link color */
+    text-decoration: none;
+}
+
+.name-email a:hover {
+    text-decoration: underline; /* Underline email on hover */
+}
+
+.job-title {
+    white-space: normal; /* Allow wrapping for long text */
+    word-wrap: break-word; /* Break long words if necessary */
+    font-weight: bold; /* Make the job title bold */
+    color: #000; /* Black text for the job title */
+    font-size: 0.9rem;
+    line-height: 1.2; /* Adjusted line height for better alignment */
+    max-width: 300px; /* Restrict the width of the job column */
+    margin-top: 0; /* Align the job title with the top */
+}
+
+.publication-list {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin: 20px 0; /* Add spacing above and below */
+}
+
+.publication-list li {
+    margin-bottom: 10px; /* Space between items */
+    font-size: 1rem;
+}
+
+.publication-list a {
+    color: #030F4F; /* Link color */
+    text-decoration: none;
+}
+
+.publication-list a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Sample Data Container */
+.sample-data-container {
+    display: flex;
+    flex-direction: column; /* Arrange rows vertically */
+    gap: 30px; /* Space between rows */
+    margin-top: 20px;
+}
+
+/* Sample Row Styling */
+.sample-row {
+    display: grid;
+    grid-template-columns: 200px auto; /* Fixed width for the image, flexible width for the name */
+    align-items: start; /* Align items at the top of the row */
+    gap: 10px; /* Space between image and name */
+}
+
+/* Sample Image Styling */
+.sample-img {
+    width: 200px; /* Fixed width for uniformity */
+    height: 300px; /* Fixed height */
+    object-fit: cover; /* Ensure proper scaling */
+}
+
+/* Sample Name Styling */
+.sample-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000; /* Match your design scheme */
+    margin: 0; /* Remove default margin */
+    align-self: start; /* Ensures the name aligns to the top */
+}
+
+/* Clear file button ('×') */
+.clear-file-button {
+    position: absolute; /* Position relative to the file preview container */
+    top: 0; /* Align to the top of the image preview */
+    right: 0; /* Keep it at the right side */
+    background: none;
+    border: none;
+    font-size: 20px;
+    line-height: 1;
+    padding: 0;
+    cursor: pointer;
+    color: #000; /* Adjust color as needed */
+}
+
+.clear-file-button:hover {
+    color: #f1f1f1; /* Change color on hover if desired */
+}
+
+#sample-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 150px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 5px;
+    text-align: center;
+}
+
+.card-body input {
+    margin-right: 5px;
+}
+
+/* Consistent Button Styling */
+.custom-button {
+    background-color: #fff; /* Same background as FungAI button */
+    color: #000; /* Black text */
+    height: 40px; /* Same height */
+    padding: 0 15px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border styling */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 200ms ease-in-out; /* Smooth transition */
+    display: flex; /* Flex layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+.custom-button:hover {
+    background-color: #f3f4f6; /* Hover effect */
+}
+
+.custom-button:active {
+    background-color: #e5e7eb; /* Active button effect */
+}
+
+.modal-content {
+    background-color: #fff; /* Set background to white */
+    color: #000; /* Ensure text remains visible on a white background */
+    border-radius: 5px; /* Optional: Rounded corners */
+    border: 1px solid #ddd; /* Optional: Subtle border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for a clean effect */
+}
+
+.modal-dialog {
+    display: flex;
+    align-items: center; /* Centers the modal vertically */
+    justify-content: center; /* Centers the modal horizontally */
+    margin: 0 auto !important; /* Ensures the modal is horizontally centered */
+    min-height: 100vh; /* Ensures the modal spans the full viewport height */
+}
+

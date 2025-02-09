@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.FungAI/
+
+# macOS system files
+.DS_Store
+
+# Logs
+*.log
+
+# Test outputs
+*.out
+*.pytest_cache/
+.coverage
+
+# Dataset files
+data/
+
+# IntelliJ/IDEA project files
+*.iml
+.idea/
+
+# Excel files
+*.xlsx
+
+# XML files
+*.xml
+*.pth

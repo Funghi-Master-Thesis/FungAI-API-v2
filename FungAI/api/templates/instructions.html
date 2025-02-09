@@ -1,0 +1,24 @@
+<div class="tab-pane fade" id="instructions" role="tabpanel" aria-labelledby="instructions-tab">
+    <h2>Instructions</h2>
+    <hr> <!-- Horizontal line -->
+    <p>1) The input images must be in 6-well plates, as shown below:</p>
+
+    <!-- Display Image -->
+    <div class="text-center mb-4">
+        <img src="{{ request.url_for('static', path='images/IBT_23255.jpeg') }}?v={{ version }}"
+             alt="IBT 23255"
+             class="img-thumbnail"
+             style="width: 300px; height: auto; max-width: 100%; object-fit: cover;">
+        <p style="font-size: 0.9rem; color: #666;">IBT 23255</p>
+    </div>
+
+    <p>2) Choose your file and click Upload. You will then see the five closest classifications to your input. (Below is a short video demonstrating how the model is used).</p>
+
+    <!-- Display Video -->
+    <div class="text-center">
+        <video controls style="max-width: 100%; height: auto;">
+            <source src="{{ request.url_for('static', path='videos/video_instructions.mp4') }}?v={{ version }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
